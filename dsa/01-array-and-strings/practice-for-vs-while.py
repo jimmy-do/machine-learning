@@ -21,7 +21,7 @@ while i < len(s):
     count = j - i
     compressed += (str(count) + s[i]) if count > 1 else s[i]
     i = j
-    
+
 print(compressed)
         
         
