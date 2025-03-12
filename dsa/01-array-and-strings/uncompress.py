@@ -12,6 +12,7 @@ def uncompress_slower(s):
             result += s[j] * num  # Repeat the next character num times
             j += 1  # Move past the character
             i = j  # Update the start index for the next number
+            a = ['alo','moto']
 
     return result  # Return the expanded string
 
