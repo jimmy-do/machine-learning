@@ -16,7 +16,7 @@ def two_sum_dictionary(numbers, target_sum):
             return (previous_nums[complement], index)  # Return matching indices
 
         previous_nums[num] = index  # Store current number with its index
-    
+        
 
 # Example usage
 nums = [3, 2, 5, 4, 1]
