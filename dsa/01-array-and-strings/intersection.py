@@ -12,10 +12,12 @@ def intersection_brute(first_list,second_list):
     return result
 
 def intersection_using_set(first_list,second_list):
-    pass
+    first_list = set(first_list)
+    return [i for i in second_list if i in first_list]
 
 
 # print(intersection([4,2,1,6], [3,6,9,2,10]))
 a = [ i for i in range(0, 5) ]
 b = [ i for i in range(0, 5) ]
 print(intersection_brute(a, b))
+print(intersection_using_set(a, b))
