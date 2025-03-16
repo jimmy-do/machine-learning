@@ -5,9 +5,6 @@
 
 def all_unique(items):
     items_set = set(items)
-    if len(items) == len(items_set):
-        return True
-    else:
-        return False
-    
-    
+    return len(items)==len(items_set)
+
+print(all_unique(["red", "blue", "blue", "green", "orange"]))
