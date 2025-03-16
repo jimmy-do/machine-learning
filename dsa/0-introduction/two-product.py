@@ -10,7 +10,8 @@ def pair_product_dictionary(numbers, target_product):
     for index, value in enumerate(numbers): # traverse our ds
         complement = target_product / value # complement logic
         
-        if complement in previous_nums: # if complement exists in our hashmap/dictionary, we will return the matching indices
+        if complement in previous_nums: # if complement exists in our hashmap/dictionary,
+            # we will return the matching indices
             return previous_nums[complement],index
         
         previous_nums[value] = index # opposite day! We are assigning the index to the value e.g { 5 : 0 }, { 16 : 1 }
