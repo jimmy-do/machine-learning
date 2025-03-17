@@ -16,6 +16,10 @@ def char_count(s):
 
     return count  # Return the dictionary with character counts
 
+
+print(char_count("listen"))
+print(char_count("silent"))
+
 # Example Usage
 print(anagrams("listen", "silent"))  # True
 print(anagrams("hello", "world"))    # False
