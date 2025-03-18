@@ -13,7 +13,7 @@ def two_sum_dictionary(numbers, target_sum):
         complement = target_sum - num  # Compute required number to complete sum
 
         if complement in previous_nums:
-            return (previous_nums[complement], index)  # Return matching indices
+            return previous_nums[complement], index  # Return matching indices
 
         previous_nums[num] = index  # Store current number with its index
         
