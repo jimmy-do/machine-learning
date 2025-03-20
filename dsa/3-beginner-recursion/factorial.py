@@ -8,7 +8,7 @@ def factorial(n):
     if n == 1:
         return 1
     elif n < 1:
-        exit(1)
+        exit(1) 
     print(f"Multiplying{n}...")
     return n * factorial(n-1)
 
