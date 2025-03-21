@@ -6,4 +6,4 @@ def countdown(n):
     countdown(n-1)
     print(f"Returning from {n}!")
 
-countdown(2)
+countdown(3)
