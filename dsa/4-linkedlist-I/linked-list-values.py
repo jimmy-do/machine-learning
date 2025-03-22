@@ -29,4 +29,4 @@ c.next = d
 
 # a -> b -> c -> d
 
-print(linked_listed_values(b)) # -> [ 'a', 'b', 'c', 'd' ]
+print(linked_listed_values(a)) # -> [ 'a', 'b', 'c', 'd' ]
