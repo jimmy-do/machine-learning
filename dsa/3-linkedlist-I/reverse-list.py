@@ -17,11 +17,12 @@ def reverse_linked_list(head):
 
 
 def reverse_linked_list_recursive(head, prev=None):
-    if head is None:
+    current = head
+    if not current:
         return prev
-    next = head.next
-    head.next = prev
-    return reverse_linked_list_recursive(next, head)
+    next = current.next
+    current.next = prev
+    return reverse_linked_list_recursive(next, current)
 
 
 def print_linked_list(head):
