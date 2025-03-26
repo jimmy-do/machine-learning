@@ -25,7 +25,6 @@ def get_node_value_recursive(head, index):
 
 
 
-
 a = Node("a")
 b = Node("b")
 c = Node("c")
