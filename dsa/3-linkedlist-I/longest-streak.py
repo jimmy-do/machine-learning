@@ -11,7 +11,7 @@ def longest_streak(head):
     prev_val = None
     current = head
     
-    while current is not None:
+    while current:
         if current.val == prev_val:
             current_streak += 1
         else:
