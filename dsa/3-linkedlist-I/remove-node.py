@@ -23,7 +23,7 @@ def remove_node_iterative(head, target_val):
     while current:
         if current.val == target_val:
             prev.next = current.next
-            # break
+            break
         prev = current
         current = current.next
 
