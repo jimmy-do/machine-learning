@@ -4,6 +4,9 @@ class Node:
         self.left = None
         self.right = None
         
+    def __repr__(self):
+        return f"Node('self.val')"
+        
         
 a = Node("a")
 b = Node("b")
