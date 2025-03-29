@@ -22,6 +22,7 @@ def depth_first_values(root):
     return result
 
 
+
 print(depth_first_values(a))
 
 a = Node('a')
