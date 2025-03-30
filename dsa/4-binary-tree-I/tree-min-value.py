@@ -7,7 +7,7 @@ from Node import *
 
 # You may assume that the input tree is non-empty.
 
-def tree_min_value_iterative(root):
+def tree_min_value_iterative(root): #breadth first search
     minimum = 0
     queue = deque([root])
 
@@ -21,8 +21,16 @@ def tree_min_value_iterative(root):
             queue.append(current.right)
     return minimum
 
-    
-    
+
+def tree_min_value_recursive(root):
+   if not root:
+       return float("inf") 
+   smallest_left = tree_min_value_recursive(root.left)
+   smallest_right = tree_min_value_recursive(root.right)
+   return min(root.val,smallest_left,smallest_right)
+
+
+
 a = Node(3)
 b = Node(11)
 c = Node(4)
@@ -41,4 +49,5 @@ c.right = f
 #   11     4
 #  / \      \
 # 4   -2     1
-print(tree_min_value_iterative(a)) # -> -2
+print(tree_min_value_iterative(a)) 
+print(tree_min_value_recursive(a)) 
