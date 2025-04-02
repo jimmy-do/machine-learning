@@ -6,21 +6,32 @@ from collections import deque
 
 # You may assume that the tree contains unique values.
 
-def path_finder_slow(root, target):
+def path_finder_plus(root, target):
     if root is None:
+        print("Reached a None node, returning None")
         return None
-    
+
+    print(f"Visiting Node: {root.val}")
+
     if root.val == target:
+        print(f"Found target {target} at node {root.val}")
         return [root.val]
 
-    left_path = path_finder_slow(root.left, target)
-    if left_path:
-        return [root.val, *left_path]
+    print(f"Searching left of {root.val}")
+    left_path = path_finder_plus(root.left, target)
+    if left_path is not None:
+        path = [root.val] + left_path
+        print(f"Path found via left of {root.val}: {path}")
+        return path
 
-    right_path = path_finder_slow(root.right, target)
-    if right_path:
-        return [root.val, *right_path]
-    
+    print(f"Searching right of {root.val}")
+    right_path = path_finder_plus(root.right, target)
+    if right_path is not None:
+        path = [root.val] + right_path
+        print(f"Path found via right of {root.val}: {path}")
+        return path
+
+    print(f"No path found from node {root.val}, returning None")
     return None
 
 
@@ -50,25 +61,11 @@ def _path_finder_fast(root, target):
   
   return None
 
-a = Node("a")
-b = Node("b")
-c = Node("c")
-d = Node("d")
-e = Node("e")
-f = Node("f")
 
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.right = f
 
-#      a
-#    /   \
-#   b     c
-#  / \     \
-# d   e     f
+root = build_test_tree()
+print_test_tree()
 
-print(path_finder_slow(a, 'e')) # -> [ 'a', 'b', 'e' ]
-print(path_finder_fast(a, 'e')) # -> [ 'a', 'b', 'e' ]
+print(path_finder_plus(root, 'e')) # -> [ 'a', 'b', 'e' ]
+print(path_finder_fast(root, 'e')) # -> [ 'a', 'b', 'e' ]
 
