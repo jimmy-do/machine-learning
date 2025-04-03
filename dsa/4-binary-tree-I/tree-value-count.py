@@ -18,11 +18,11 @@ def tree_value_count(root, target):
         if current.left:
             stack.append(current.left)   # add more nodes to stack as we descend tree
         if current.right:
-            stack.append(currrent.right) # ensure we traverse down both left and right child nodes
+            stack.append(current.right) # ensure we traverse down both left and right child nodes
     return count
 
 
 
-root = build_test_tree_nums
+root = build_test_tree_nums()
 print_test_tree_nums()
 print(tree_value_count(root, 6))
