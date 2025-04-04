@@ -53,7 +53,7 @@ def print_test_tree():
     print("  b     c")
     print(" / \\     \\")
     print("d   e     f")
-    print("\n" * 4)
+    print("\n" * 2)
 
 def print_test_tree_nums():
     print("     12")
@@ -61,4 +61,4 @@ def print_test_tree_nums():
     print("  6     6")
     print(" / \\     \\")
     print("4   6     12")
-    print("\n" * 4)
+    print("\n" * 2)
