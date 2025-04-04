@@ -23,8 +23,6 @@ def depth_first_values(root):
 
 
 
-print(depth_first_values(a))
-
 a = Node('a')
 b = Node('b')
 c = Node('c')
