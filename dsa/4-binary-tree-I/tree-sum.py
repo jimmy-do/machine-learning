@@ -1,50 +1,38 @@
-from collections import deque
 from Node import *
-# tree sum
+from collections import deque
 
-# Write a function, tree_sum, that takes in the root of a binary tree that contains number values. 
-# The function should return the total sum of all values in the tree.
-
-def tree_sum_iterative(root):
+def tree_levels(root):
     if not root:
-        return 0
-    queue = deque([root])
-    sum = 0
+        return []
+
+    levels = []
+    queue = deque([(root,0)])
+
     while queue:
-        current = queue.popleft()
-        sum += current.val
+        current, level = queue.popleft()
+
+        if len(levels) == level:
+            levels.append([current.val])
+        else:
+            levels[level].append(current.val)
+
         if current.left:
-            queue.append(current.left)
+            queue.append((current.left, level + 1))
         if current.right:
-            queue.append(current.right)
-    return sum
+            queue.append((current.right, level + 1))
 
+    return levels
 
-def tree_sum_recursive(root):
-    if not root:
-        return 0
-    return root.val + tree_sum_recursive(root.left) + tree_sum_recursive(root.right)
-
-
-        
-a = Node(3)
-b = Node(11)
-c = Node(4)
-d = Node(4)
-e = Node(-2)
-f = Node(1)
+a = Node('a')
+b = Node('b')
+c = Node('c')
+d = Node('d')
+e = Node('e')
 
 a.left = b
 a.right = c
 b.left = d
-b.right = e
-c.right = f
+c.right = e
 
-#       3
-#    /    \
-#   11     4
-#  / \      \
-# 4   -2     1
+print(tree_levels(a))
 
-print(tree_sum_iterative(a)) # -> 21
-print(tree_sum_recursive(a)) # -> 21
